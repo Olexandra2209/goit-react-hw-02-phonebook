@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
+import SearchInput from './SearchInput/SearchInput';
 
 export default class App extends Component {
   state = {
@@ -50,12 +51,9 @@ export default class App extends Component {
         <ContactForm addContact={this.addContact} />
         <h2>Contacts</h2>
         <h3>Find contacts by name</h3>
-        <input
-          type="text"
-          name="filter"
+        <SearchInput
           value={this.state.filter}
           onChange={this.handleFilterChange}
-          placeholder="Search contacts"
         />
         <ContactList
           contacts={filteredContacts}
